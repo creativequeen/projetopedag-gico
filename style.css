@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    position: relative; /* Define o posicionamento relativo para o body */
+    min-height: 100vh; /* Garante que o body tenha pelo menos a altura da viewport */
+   
+}
+
+h1, h2, p {
+    margin-top: -10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    margin-left: 10px;
+  /* Cor do texto */
+  color: white;
+  /* Cor de fundo em degradê */
+  background: linear-gradient(to right, #00bcd4, #1e88e5);
+  /* Bordas arredondadas */
+  border-radius: 5px;
+  /* Espaçamento interno */
+  padding: 10px 20px;
+  /* Remover borda padrão */
+  border: none;
+  /* Cursor indicando que é clicável */
+  cursor: pointer;
+  /* Transição suave ao passar o mouse */
+  transition: background-color 0.3s ease;
+}
+
+.card {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #086cdf;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    display: flex; /* Define o container como flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilos para os elementos dentro do formulário */
+#formEnvio label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#formEnvio input[type="file"],
+#formEnvio select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #086cdf;
+    border-radius: 3px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+#formEnvio input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formEnvio input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"] {
+    /* Cor do texto */
+    color: white;
+    /* Cor de fundo em degradê */
+    background: linear-gradient(to right, #00bcd4, #1e88e5);
+    /* Bordas arredondadas */
+    border-radius: 5px;
+    /* Espaçamento interno */
+    padding: 10px 20px;
+    /* Remover borda padrão */
+    border: none;
+    /* Cursor indicando que é clicável */
+    cursor: pointer;
+    /* Transição suave ao passar o mouse */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo quando o mouse passa por cima */
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #009688, #00bcd4);
+}
+
+/* Estilizando o link quando passa o mouse por cima */
+a:hover {
+    background-color: dodgerblue; /* Altera a cor de fundo ao passar o mouse por cima */
+    color: white; /* Altera a cor do texto ao passar o mouse por cima */
+}
+
+img {
+    position: absolute; /* Define o posicionamento absoluto para a imagem */
+    bottom: 0; /* Coloca a imagem na parte inferior do body */
+    left: 0; /* Coloca a imagem no canto esquerdo do body */
+    width: 100%; /* Garante que a imagem seja responsiva e ocupe a largura total */
+    height: auto; /* Ajusta automaticamente a altura de acordo com a largura */
+    z-index: -1;
+}
+
+.imagem-pagina {
+    position: relative; /* Define o posicionamento absoluto para a imagem */
+    top: -10px;
+    width: 50%;
+    z-index: 1;
+}

@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo pedagógico</title>
+    <!-- Importe o pacote de ícones do Ionic Framework -->
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/stylehome.css">
+</head>
+<body>
+
+
+    <div class="logo">
+        
+        <img src="img/logocci.png" alt="Logo CCI">
+    </div>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="home.php">
+                    <!-- Use o nome do ícone entre as tags ion-icon -->
+                    <span class="icon"><ion-icon name="home"></ion-icon></span>
+                    <span class="litle">Início</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <!-- Use o nome do ícone entre as tags ion-icon -->
+                    <span class="icon"><ion-icon name="book"></ion-icon></span>
+                    <span class="litle">Alfabetização</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <!-- Use o nome do ícone entre as tags ion-icon -->
+                    <span class="icon"><ion-icon name="text"></ion-icon></span>
+                    <span class="litle">Letramento</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <!-- Use o nome do ícone entre as tags ion-icon -->
+                    <span class="icon"><ion-icon name="color-fill"></ion-icon></span>
+                    <span class="litle">Ética e cidadania</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="upload.php">
+                    <!-- Use o nome do ícone entre as tags ion-icon -->
+                    <span class="icon"><ion-icon name="log-in"></ion-icon></span>
+                    <span class="litle">Postar atividades</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+
+    <div class="container-banner">
+        <img src="img/Banner.png" alt="">
+            <div class="hero-text">
+                <h1> Educação, cores e valores se encontram aqui!</h1>
+                <p>Explore nosso acervo de atividades e descubra como a arte pode ser uma poderosa ferramenta para ensinar ética e cidadania.<p>
+           <div class="box">
+           <a href="login.php" class="box-link" tabindex="-1" role="button" aria-disabled="true">Login</a>
+           <a href="formulario2.php" class="box-link" tabindex="-1" role="button" aria-disabled="true">Cadastre-se</a>
+
+    
+    </div>
+           
+                </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <img src="/img/card1.png" alt="Card Image 1" class="card-img">
+            <div class="content">
+                <h3>Atividades de Alfabetização
+                </h3>
+                <a href="#">Veja mais</a>
+            </div>
+    </div>
+    <div class="card">
+        <img src="/img/Letramento.png" alt="Card Image 2" class="card-img">
+        <div class="content">
+            <h3>Atividades de Letramento
+
+            </h3>
+            <a href="#"> Veja mais</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/img/etica e cidadania.png" alt="Card Image 3" class="card-img">
+        <div class="content">
+            <h3>Atividades de Ética e Cidadania</h3>
+            <a href="#">Veja mais</a>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+
+    <!-- Efeito do Card, Glare dá efeito espelhado -->
+    <script type"text/javascript" src="vanilla-tilt.js"></script>
+    <script>VanillaTilt.init(document.querySelectorAll(".card"));
+    </script>
+</body>
+</html>

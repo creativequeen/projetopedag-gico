@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Adicionando a fonte Peach Cake */
+@font-face {
+    font-family: peachcake;
+    src: url('/fonts/Peach\ Cake.otf') format('truetype');
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Adicione aqui os estilos para o fundo dos cartões */
+}
+
+
+.container {
+    position: relative;
+    left: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    background: blueviolet;
+    padding: 20px; /* Adiciona padding ao contêiner */
+}
+/* Estilos para a imagem do cartão */
+.container .card .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
+    position: absolute; /* Faz a imagem cobrir todo o card */
+    top: 0;
+    left: 0;
+    z-index: 1;
+  
+}
+.container .card .card-img:hover {
+    filter: brightness(80%); /* Reduz a luminosidade da imagem */
+    transition: filter 0.10s ease; /* Adiciona uma transição suave para o estado de hover */
+}
+.container .card{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+    /* Adicione aqui os estilos individuais para os cartões */
+
+   /* Adicione aqui os estilos para o conteúdo dos cartões */
+   .container .card .content{
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Adiciona sombra ao texto */
+    
+}
+
+.container .card:hover .content{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container .card .content h2{
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    font-size: 4em;
+    color: rgba(0, 0, 255, 0.178);
+    pointer-events: none;
+}
+
+
+.container .card .content h3{
+    top: 120px;
+    font-size: 1.5em;
+    color: #fff;
+    z-index: 4;
+    line-height: 1.0; /* Define o espaçamento entre as linhas como 1.2 vezes o tamanho da fonte */
+    }
+    
+    .container .card .content a{
+        top: 150px;
+        position: relative;
+        display: inline-block;
+        padding: 8px 20px;
+        margin-top: 15px;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 500;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        text-shadow: none;
+    }
+
+    .container .card .content a:hover {
+        background-color: rgb(52, 142, 231); /* Altera a cor de fundo ao passar o mouse */
+        color: #fff; /* Altera a cor do texto ao passar o mouse */
+    }
+
+
+/* Estilos da barra de navegação */
+.logo img{
+    position: absolute; /* Define a posição absoluta para o logo */
+    top: 20px; /* Ajusta a distância do topo */
+    left: 85%; /* Coloca o logo no meio horizontalmente */
+    z-index: 2; /* Garante que o logo esteja acima do banner */
+    width: 10%;
+}
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70px;
+    background: #424242;
+    box-shadow: 10px 0 0 #099c22;
+    border-left: 10px solid #424242;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    z-index: 2;
+}
+
+.navigation:hover {
+    width: 180px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    align-items: center;
+}
+
+.navigation ul li a .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 60px;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.3rem;
+}
+
+.navigation ul li a .title {
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+.navigation ul li.active {
+    background: #099c22;
+}
+
+.navigation ul li.active a::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #424242;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #099c22;
+}
+/* Estilos do banner */
+.container-banner {
+    height: auto; /* Ajusta a altura automaticamente com base no conteúdo */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Altera a direção do layout para coluna */
+    justify-content: flex-start; /* Alinha os elementos ao início do contêiner */
+    align-items: center;
+    gap: 40px;
+}
+
+/* Estilos da imagem dentro do contêiner */
+.container-banner img {
+    width: 100%;
+    height: auto; /* Permite que a altura da imagem seja ajustada automaticamente */
+    align-self: flex-start; /* Alinha a imagem ao topo do contêiner */
+    margin-top: -30px;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.hero-text h1 {
+    font-family: 'peachcake', sans-serif; /* Usando a fonte Peach Cake */
+    font-size: 3.1rem; /* Exemplo de tamanho fixo, você pode ajustar conforme necessário */
+    color: #099c22;
+    margin-top: -10vh; /* Usando uma unidade relativa para o espaçamento */
+    text-align: center;
+}
+
+.hero-text p {
+    font-size: 1.2rem; /* Exemplo de tamanho fixo, você pode ajustar conforme necessário */
+    margin-top: 2vh; /* Usando uma unidade relativa para o espaçamento */
+    text-align: center;
+    
+}
+
+/* Estilos gerais para a caixa */
+/* Estilos gerais para a caixa */
+/* Estilos gerais para a caixa */
+.box {
+    position: absolute;
+    top: 22%;
+    left: 89%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    z-index: 2;
+    background-color: rgba(104, 146, 236, 0.52);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 20%; /* Largura desejada */
+    max-width: 300px; /* Largura máxima */
+}
+
+/* Estilos para os links dentro da caixa */
+.box-link {
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: block; /* Para que os links ocupem todo o espaço horizontal dentro da caixa */
+    margin-bottom: 5px; /* Adiciona um espaço entre os links */
+    font-size: 1em; /* Tamanho de fonte relativo */
+}
+
+.box-link:hover {
+    background-color: dodgerblue;
+}
+@media (max-width: 2000px) {
+    .box {
+        top: 20%;
+    }
+    .box-link {
+        font-size: 1em;
+    }
+}
+/* Media queries para ajuste fino em diferentes tamanhos de tela */
+@media (max-width: 1200px) {
+    .box {
+        top: 17%;
+    }
+    .box-link {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 900px) {
+    .box {
+        top: 15%;
+    }
+    .box-link {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 700px) {
+    .box {
+        top: 12%;
+    }
+    .box-link {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        top: 11%;
+    }
+    .box-link {
+        font-size: 0.8em;
+        padding: 7px;
+    }
+}
+
+@media (max-width: 500px) {
+    .box {
+        top: 9%;
+        width: 25%; /* Ajusta a largura para 25% da tela */
+        height: 10%;
+    }
+    .box-link {
+        font-size: 0.7em;
+        padding: 6px;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .box {
+        top: 8%;
+        width: 23%; /* Ajusta a largura para 35% da tela */
+        height: 7%;
+        
+    }
+    .box-link {
+        font-size: 0.5em;
+        padding: 1px;
+    }
+}
+
+@media (max-width: 2000px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+        margin-left: 8%;  
+        margin-top: -2%;
+
+    }  
+    
+    .hero-text p {
+        font-size: 1.5rem;
+        margin-left: 10%;
+        
+    }
+}
+    
+
+@media (max-width: 885px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+        margin-top: -3%;
+        margin-left: 12%;
+    }
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+        margin-left: 7%;
+    
+
+    }
+    .container-banner {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    .banner img {
+        width: 100%;
+        height: auto;
+
+    }
+    
+
+@media (max-width: 768px) {
+    .container-banner {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    .hero-text h1 {
+        font-size: 1.4rem;
+        margin-top: -6%;
+        margin-left: 12%;
+    }
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-left: 15%;
+
+    }
+    .container-banner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navigation {
+        height: 100vh;
+        width: 60px;
+    }
+        .navigation:hover {
+            width: 160px;
+        }
+        
+        .navigation ul li {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
+        .navigation ul li a .icon {
+            min-width: 50px;
+            height: 50px;
+            z-index: 1;
+        }
+        
+        .navigation ul li a .icon ion-icon {
+            font-size: 1.2rem;
+        }
+
+    
+    }
+
+
+
+        @media (max-width: 530px) {
+    .hero-text p {
+        font-size: 1.0rem;
+        margin-left: 12%;
+    }
+
+    
+    }
+    
+
+
+
+@media (max-width: 454px) {
+    .hero-text h1 {
+        font-size: 1.0rem;
+        margin-left: 15%;
+        margin-top: -9%;
+    }
+    .hero-text p {
+        font-size: 0.9rem;
+        margin-left: 15%;
+
+    }
+
+    .container-banner img {
+        width: 100%;
+        height: auto;
+        margin-left: 30px;
+        margin-right: 40px;
+    }
+
+    .navigation {
+        height: 100vh;  
+        width: 40px; /* largura do menu fechado */
+        
+    }
+        .navigation:hover { /* largura do menu */
+            width: 140px;
+        }
+        
+        .navigation ul li {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
+        .navigation ul li a .icon {
+            min-width: 30px;
+            height: 30px;
+            z-index: 1;
+        }
+        
+        .navigation ul li a .icon ion-icon {
+            font-size: 1.1rem;
+
+       
+         } }
